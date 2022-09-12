@@ -1,0 +1,27 @@
+.container {
+  background-color: pink;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container > li {
+  width: 24%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: dodgerblue;
+}
+.purple {
+  background-color: purple;
+}
+.green {
+  background-color: green;
+}
