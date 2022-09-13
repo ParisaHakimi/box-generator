@@ -1,5 +1,6 @@
 .container {
-  background-color: pink;
+  /* background-color: #fff; */
+  border: 1px solid #999;
   width: 100%;
   margin-top: 20px;
   padding: 10px;
@@ -12,16 +13,9 @@
   width: 24%;
   height: 200px;
   margin-bottom: 10px;
-}
-.red {
-  background-color: red;
-}
-.blue {
-  background-color: dodgerblue;
-}
-.purple {
-  background-color: purple;
-}
-.green {
-  background-color: green;
+  box-shadow: 0em 0em 0.4em #888, -0em 0 0.4em #888;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

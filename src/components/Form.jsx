@@ -6,19 +6,23 @@ const Form = ({ colourNameToHex }) => {
   const [colorInput, setColorInput] = useState("");
   const showColor = (e) => {
     e.preventDefault();
-    colourNameToHex(colorInput);
-    console.log(colourNameToHex(colorInput));
+    if (colorInput !== "") {
+      // const addedColor = [...colourNameToHex];
+      // console.log(addedColor);
+      colourNameToHex(colorInput);
+      console.log(colourNameToHex(colorInput));
+    }
   };
   return (
     <>
-      <form className={styles.form} onSubmit={showColor}>
+      <form className={styles.form}>
         <label htmlFor="">Color</label>
         <input
           type="text"
           onChange={(e) => setColorInput(e.target.value)}
           value={colorInput}
         />
-        <input type="submit" value="Add" />
+        <input type="submit" value="Add" onClick={showColor} />
       </form>
       <Boxes colourNameToHex={colourNameToHex(colorInput)} />
     </>
