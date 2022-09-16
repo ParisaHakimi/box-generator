@@ -9,7 +9,7 @@ const Form = ({ boxColorArray, setBoxColorArray }) => {
   };
   return (
     <form className={styles.form} onSubmit={showColor}>
-      <label htmlFor="">Color</label>
+      <label>Color</label>
       <input
         type="text"
         onChange={(e) => setColorInput(e.target.value)}
