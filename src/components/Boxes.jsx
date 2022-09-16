@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "../static/boxes.module.css";
 
-const Boxes = ({ colourNameToHex }) => {
+const Boxes = ({ boxColorArray }) => {
   return (
     <ul className={styles.container}>
-      <li style={{ backgroundColor: colourNameToHex }}>{colourNameToHex}</li>
+      {boxColorArray.map((color, index) => (
+        <li key={index} style={{ backgroundColor: color }}>
+          {color}
+        </li>
+      ))}
     </ul>
   );
 };

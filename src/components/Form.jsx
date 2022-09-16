@@ -1,32 +1,22 @@
 import { useState } from "react";
 import styles from "../static/form.module.css";
-import Boxes from "./Boxes";
 
-const Form = ({ colourNameToHex }) => {
+const Form = ({ boxColorArray, setBoxColorArray }) => {
   const [colorInput, setColorInput] = useState("");
   const showColor = (e) => {
     e.preventDefault();
-    if (colorInput !== "") {
-      // const addedColor = [...colourNameToHex];
-      // console.log(addedColor);
-      colourNameToHex(colorInput);
-      console.log(colourNameToHex(colorInput));
-    }
+    setBoxColorArray([...boxColorArray, colorInput]);
   };
   return (
-    <>
-      <form className={styles.form}>
-        <label htmlFor="">Color</label>
-        <input
-          type="text"
-          onChange={(e) => setColorInput(e.target.value)}
-          value={colorInput}
-        />
-        <input type="submit" value="Add" onClick={showColor} />
-      </form>
-      <Boxes colourNameToHex={colourNameToHex(colorInput)} />
-    </>
+    <form className={styles.form} onSubmit={showColor}>
+      <label htmlFor="">Color</label>
+      <input
+        type="text"
+        onChange={(e) => setColorInput(e.target.value)}
+        value={colorInput}
+      />
+      <input type="submit" value="Add" />
+    </form>
   );
 };
-
 export default Form;
